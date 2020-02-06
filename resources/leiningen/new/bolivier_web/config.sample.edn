@@ -1,0 +1,5 @@
+;; copy this file to `./config.edn` to get your db working
+{:database-name "{{name}}_dev"
+ :server-name "localhost"
+ :username "your-name"
+ :password "your-password"}

@@ -1,0 +1,7 @@
+{:objects
+ {:user {:fields {:username {:type String}}}}
+
+ :queries {:userByUsername {:type :user
+                            :description "a user"
+                            :args {:username {:type String}}
+                            :resolve :query/user-by-username}}}
