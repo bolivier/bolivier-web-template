@@ -3,6 +3,8 @@
             [{{name}}.core]
             [{{name}}.db.core :as db]
             [{{name}}.db.schema :refer [schema]]
+            [shadow.cljs.devtools.server :as server]
+            [shadow.cljs.devtools.api :as shadow]
             [migratus.core :as migratus]
             [mount.core :as mount]
             [midje.sweet :as m]
