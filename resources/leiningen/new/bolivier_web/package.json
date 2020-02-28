@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "build:css": "npx tailwindcss build ./resources/public/css/tailwind.css -o ./resources/public/css/index.css"
+    },
+    "devDependencies": {
+        "tailwindcss": "^1.2.0"
+    },
+    "dependencies": {
+        "react": "^16.12.0",
+        "react-dom": "16.9.0"
+    }
+}

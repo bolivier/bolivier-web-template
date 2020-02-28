@@ -1,4 +1,4 @@
-(defproject bolivier-web/lein-template "0.1.1"
+(defproject bolivier-web/lein-template "0.1.3"
   :description "FIXME: write description"
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                     :sign-releases false}]]

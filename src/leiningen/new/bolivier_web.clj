@@ -51,4 +51,11 @@
               (render "core.cljs" data)]
 
              [(str "src/clj/" sanitized "/db/schema.clj")
-              (render "schema.clj" data)])))
+              (render "schema.clj" data)]
+
+             ["package.json"
+              (render "package.json" data)]
+
+             ["resources/public/css/tailwind.css"
+              (render "tailwind.css" data)])
+    (prn "Don't forget to run `yarn` and `yarn build:css` to get tailwind working.")))
