@@ -1,14 +1,41 @@
-# bolivier-web
+# bolivier Web
 
-A Leiningen template for FIXME.
+A Leiningen template for me to use for web projects
+
+#### It includes
+
+* Aleph for http
+* Reitit for routing
+* graphql (via Lacinia)
+* Postgresql support w/ next.jdbc
+* HoneySQL
+* Mount
+* Shadow-CLJS
+* Reagent/React
+
+#### Potentially include:
+
+* Re-Frame
 
 ## Usage
 
-FIXME
+To start the server, launch a repl, you should find yourself in the `user` ns.
+
+From there run
+
+```
+> (start)
+```
+
+Then, to build the frontend, go to a terminal and run:
+
+```
+shadow-cljs watch frontend
+```
 
 ## License
 
-Copyright © 2020 FIXME
+Copyright © 2020 Brandon Olivier
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
