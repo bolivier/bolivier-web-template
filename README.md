@@ -13,6 +13,13 @@ A Leiningen template for me to use for web projects
 * Shadow-CLJS
 * Reagent/React
 
+### Options
+
+| flag       | description                     |
+|------------|---------------------------------|
+| `+graphql` | add graphql support via lacinia |
+|            |                                 |
+
 #### Potentially include:
 
 * Re-Frame

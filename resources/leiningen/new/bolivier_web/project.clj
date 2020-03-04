@@ -16,7 +16,9 @@
                  [yogthos/config "1.1.7"]
                  [mount "0.1.16"]
                  [aleph "0.4.7-alpha5"]
+                 {{#graphql}}
                  [com.walmartlabs/lacinia "0.36.0-alpha-2"]
+                 {{/graphql}}
                  [camel-snake-kebab "0.4.1"]
                  [midje/midje "1.9.9"]
                  [metosin/reitit "0.3.10"]
