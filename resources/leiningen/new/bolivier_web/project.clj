@@ -31,7 +31,9 @@
                  [reagent "0.9.1"]]
   :main ^:skip-aot {{name}}.core
   :target-path "target/%s"
-  :repl-options {:init-ns user}
+  :repl-options {:init-ns user
+                 :nrepl-middleware
+                 [shadow.cljs.devtools.server.nrepl/middleware]}
   :source-paths ["src/clj" "src/cljs"]
   :profiles {:uberjar {:aot :all
                        :resource-paths ["config/prod"]}
