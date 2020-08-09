@@ -7,11 +7,14 @@
 
 (def valid-flags #{"+graphql"})
 
+(defn flagged-with? [flags flag]
+  (boolean (some #{flag} flags)))
+
 (defn bolivier-web
   "FIXME: write documentation"
   [name & flags]
   (let [sanitized  (name-to-path name)
-        graphql? (get flags "+graphql")
+        graphql? (flagged-with? flags "+graphql")
         data {:name name
               :sanitized sanitized
               :graphql graphql?}]
