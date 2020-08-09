@@ -2,6 +2,12 @@
 
 A Leiningen template for me to use for web projects
 
+### How to deploy
+
+* Install GPG and configure keys
+* Create [`~/.lein/credentials.clj.gpg`](https://github.com/technomancy/leiningen/blob/master/doc/DEPLOY.md#authentication)
+* Make sure you have clojars deploy token and use that as the password in ^that file
+
 #### It includes
 
 * Aleph for http
