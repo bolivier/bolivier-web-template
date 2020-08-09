@@ -63,9 +63,6 @@
                       [(str "src/clj/" sanitized "/db/schema.clj")
                        (render "schema.clj" data)])
 
-                    [(str "src/clj/" sanitized "/db/schema.clj")
-                     (render "schema.clj" data)]
-
                     ["package.json"
                      (render "package.json" data)]
 
