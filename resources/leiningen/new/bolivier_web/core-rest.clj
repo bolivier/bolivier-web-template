@@ -6,7 +6,7 @@
             [reitit.ring.coercion :refer [coerce-request-middleware coerce-exceptions-middleware]]
             [{{name}}.utils :as utils]
             [mount.core :refer [defstate]]
-            [{{name}} .middleware :refer [json-response-body json-request-body]]
+            [{{name}}.middleware :refer [json-response-body json-request-body]]
             [reitit.ring :as ring]
             [ring.middleware.cors :refer [wrap-cors]]))
 

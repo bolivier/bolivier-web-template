@@ -26,7 +26,7 @@
   (stop)
   (start))
 
-(def config {:db {:datasource} db/db
+(def config {:db {:datasource db/db}
              :store :database})
 (defn migrate []
   (migratus/migrate config))

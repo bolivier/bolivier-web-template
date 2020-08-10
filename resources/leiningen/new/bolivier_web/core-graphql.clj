@@ -1,5 +1,4 @@
 (ns {{name}}.core
-  (:gen-class)
   (:require [aleph.http :as http]
             [cheshire.core :as cheshire]
             [com.walmartlabs.lacinia :as lacinia]
