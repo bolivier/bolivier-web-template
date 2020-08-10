@@ -1,9 +1,12 @@
 (ns {{name}}.core
   (:gen-class)
   (:require [aleph.http :as http]
-            [cheshire.core :as cheshire]            
+            [cheshire.core :as cheshire]
+            [reitit.coercion.spec]
+            [reitit.ring.coercion :refer [coerce-request-middleware coerce-exceptions-middleware]]
             [{{name}}.utils :as utils]
             [mount.core :refer [defstate]]
+            [{{name}} .middleware :refer [json-response-body json-request-body]]
             [reitit.ring :as ring]
             [ring.middleware.cors :refer [wrap-cors]]))
 
@@ -19,25 +22,17 @@
   {:status 200
    :body (slurp "resources/public/index.html")})
 
-(defn wrap-with-cors
-  "Wrap the server response in a Control-Allow-Origin Header to
-  allow connections from the web app."
-  [handler]
-  (fn [request]
-    (let [response (handler request)]
-      (-> response
-          (assoc-in [:headers "Access-Control-Allow-Origin"] "*")
-          (assoc-in [:headers "Access-Control-Allow-Headers"] "x-requested-with, content-type")
-          (assoc-in [:headers "Access-Control-Allow-Methods"] "*")))))
-
 (defn create-router []
   (ring/ring-handler
    (ring/router
     [""
      ["/" {:get {:handler index-handler}}]
      ["/api"
+      {:middleware [json-request-body json-response-body]}
       ["/ping" {:get {:handler ping-handler}
-                :name ::ping}]]])
+                :name ::ping}]]]
+    {:data {:coercion reitit.coercion.spec/coercion
+            :middleware [coerce-exceptions-middleware coerce-request-middleware]}})
    (ring/routes
     (ring/create-resource-handler
      {:root ""
