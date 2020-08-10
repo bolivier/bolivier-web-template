@@ -1,8 +1,10 @@
 (ns user
-  (:require [com.walmartlabs.lacinia :as lacinia]
-            [{{name}}.core]
+  (:require [{{name}}.core]
             [{{name}}.db.core :as db]
+            {{#graphql}}
+            [com.walmartlabs.lacinia :as lacinia]
             [{{name}}.db.schema :refer [schema]]
+            {{/graphql}}
             [shadow.cljs.devtools.server :as server]
             [shadow.cljs.devtools.api :as shadow]
             [migratus.core :as migratus]
