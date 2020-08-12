@@ -10,7 +10,7 @@
 
 (defn ping-handler [req]
   {:status 200
-   :body "fine"})
+   :body "ping"})
 
 (defn graphql-handler [req]
   (let [body (-> req

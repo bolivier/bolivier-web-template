@@ -1,8 +1,7 @@
 (ns {{name}}.core
-  (:gen-class)
   (:require [aleph.http :as http]
             [cheshire.core :as cheshire]
-            [reitit.coercion.spec]
+            [reitit.coercion.spec :as spec]
             [reitit.ring.coercion :refer [coerce-request-middleware coerce-exceptions-middleware]]
             [{{name}}.utils :as utils]
             [mount.core :refer [defstate]]
@@ -12,7 +11,7 @@
 
 (defn ping-handler [req]
   {:status 200
-   :body "fine"})
+   :body "ping"})
 
 (defn parse-query-params [handler]
   (fn [req]
@@ -26,13 +25,13 @@
   (ring/ring-handler
    (ring/router
     [""
+     {:middleware [coerce-request-middleware coerce-exceptions-middleware]
+      :coercion spec/coercion}
      ["/" {:get {:handler index-handler}}]
      ["/api"
       {:middleware [json-request-body json-response-body]}
       ["/ping" {:get {:handler ping-handler}
-                :name ::ping}]]]
-    {:data {:coercion reitit.coercion.spec/coercion
-            :middleware [coerce-exceptions-middleware coerce-request-middleware]}})
+                :name ::ping}]]])
    (ring/routes
     (ring/create-resource-handler
      {:root ""

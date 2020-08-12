@@ -1,4 +1,4 @@
-(defproject bolivier-web/lein-template "0.1.9"
+(defproject bolivier-web/lein-template "0.1.10"
   :description "My own configuration for web projects."
   :deploy-repositories [["clojars" {:url "https://clojars.org/repo"
                                     :creds :gpg}]]
