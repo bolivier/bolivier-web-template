@@ -26,8 +26,10 @@
   (stop)
   (start))
 
-(def config {:db db/db
-             :store :database})
+(mount/defstate config
+  :start {:db db/db
+          :store :database})
+
 (defn migrate []
   (migratus/migrate config))
 
