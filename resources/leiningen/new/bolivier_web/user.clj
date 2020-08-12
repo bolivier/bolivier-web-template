@@ -27,7 +27,7 @@
   (start))
 
 (mount/defstate config
-  :start {:db db/db
+  :start {:db {:datasource db/db}
           :store :database})
 
 (defn migrate []

@@ -57,6 +57,12 @@
                     [(str "src/clj/" sanitized "/db/core.clj")
                      (render "db_core.clj" data)]
 
+                    [(str "src/clj/" sanitized "/db/helpers.clj")
+                     (render "helpers.clj" data)]
+
+                    [(str "src/clj/" sanitized "/middleware.clj")
+                     (render "middleware.clj" data)]
+
                     [(str "src/clj/" sanitized "/utils.clj")
                      (render "utils.clj" data)]
 
